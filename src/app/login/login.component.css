@@ -1,0 +1,22 @@
+/* login.component.scss */
+
+:host {
+    font-size: 12px;
+  }
+  
+  form {
+    font-size: 12px;
+  }
+  
+  label {
+    font-size: 12px;
+  }
+  
+  input {
+    font-size: 12px;
+  }
+  
+  button {
+    font-size: 12px;
+  }
+  

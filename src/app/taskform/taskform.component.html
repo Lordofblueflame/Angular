@@ -1,0 +1,20 @@
+<ng-template #taskDialog ngIf="data">
+  <h2 mat-dialog-title>Dodaj Task</h2>
+  <mat-dialog-content>
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+      <mat-form-field>
+        <input matInput placeholder="Tytuł" [(ngModel)]="data.title" name="title" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Opis" [(ngModel)]="data.description" name="description" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Funkcjonalność" [(ngModel)]="data.functionality" name="functionality" required>
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button color="primary" (click)="onSubmit()" [disabled]="!form.valid">Dodaj</button>
+    <button mat-button color="warn" (click)="onClose()">Anuluj</button>
+  </mat-dialog-actions>
+</ng-template>

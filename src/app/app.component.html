@@ -1,0 +1,10 @@
+<div class="app">
+  <ng-container *ngIf="isLoggedIn; else loginTemplate">
+    <h1>Welcome, {{ username }}!</h1>
+    <app-kanban-board [tasks]="tasks"></app-kanban-board>
+  </ng-container>
+
+  <ng-template #loginTemplate>
+    <app-login (loginAction)="onLogin($event)"></app-login>
+  </ng-template>
+</div>

@@ -1,0 +1,12 @@
+<div class="task-details">
+  <!-- Wyświetlanie informacji o zadaniu -->
+  <h2>{{ task.title }}</h2>
+  <p>{{ task.description }}</p>
+  <p>{{ task.functionality }}</p>
+  <p>{{ task.column }}</p>
+
+  <!-- Przycisk "Edit Task" -->
+  <button (click)="openTaskForm()">Edit Task</button>
+
+  <button (click)="deleteTask()">Delete Task</button>
+</div>
