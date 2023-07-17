@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { Task } from '../interfaces/task.interface';
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Column } from '../interfaces/column.interface';
 
 @Component({
@@ -96,5 +95,18 @@ export class KanbanBoardComponent {
       }
     );
   }
+
+  getUniqueFunctionalities(tasks: Task[]): string[] {
+    const uniqueFunctionalities: string[] = [];
+  
+    tasks.forEach(task => {
+      if (task.functionality && !uniqueFunctionalities.includes(task.functionality)) {
+        uniqueFunctionalities.push(task.functionality);
+      }
+    });
+  
+    return uniqueFunctionalities;
+  }
+  
 }
 

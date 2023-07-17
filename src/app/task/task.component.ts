@@ -16,7 +16,7 @@ export class TaskComponent {
     column: ''
   };
   @Output() taskUpdated: EventEmitter<Task> = new EventEmitter<Task>();
-  @Output() taskDeleted: EventEmitter<Task> = new EventEmitter<Task>(); // Dodane zdarzenie taskDeleted
+  @Output() taskDeleted: EventEmitter<Task> = new EventEmitter<Task>(); 
 
   constructor(private dialog: MatDialog) {}
 
@@ -33,6 +33,6 @@ export class TaskComponent {
   }
 
   deleteTask() {
-    this.taskDeleted.emit(this.task); // Emitowanie zadania, które ma zostać usunięte
+    this.taskDeleted.emit(this.task);
   }
 }
