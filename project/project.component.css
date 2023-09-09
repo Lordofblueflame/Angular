@@ -1,0 +1,16 @@
+.project-layout {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .kanban-board {
+    width: 85%;  
+  }
+  
+  .functionalities-panel {
+    width: 15%;  
+    border-left: 1px solid #ccc;
+    padding-left: 20px;
+  }
+  

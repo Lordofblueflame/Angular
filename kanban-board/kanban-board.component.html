@@ -1,0 +1,25 @@
+<div cdkDropListGroup class="kanban-board">
+  <div class="kanban-column" *ngFor="let column of columns" (dragover)="onDragOver($event)" (drop)="onDrop($event, column.title)">
+    <h2 class="kanban-title">{{ column.title }}</h2>
+    <ul class="kanban-list">
+      <li class="kanban-item" *ngFor="let functionality of getUniqueFunctionalities(column.tasks)">
+        {{ functionality }}
+        <ul class="kanban-sublist">
+          <li class="kanban-subitem" *ngFor="let task of column.tasks" [hidden]="task.functionality !== functionality" draggable="true" (dragstart)="onDragStart($event, task)">
+            <app-task [task]="task" (taskDeleted)="onTaskDeleted($event)"></app-task>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <button class="kanban-add-btn" (click)="openForm(column.title)">Add Task</button>
+    <div *ngIf="newTask.column === column.title" class="form-popup">
+      <h3 class="form-popup-title">Add New Task</h3>
+      <form (submit)="addTask(column.title)">
+        <input class="form-input" type="text" name="title" [(ngModel)]="newTask.title" placeholder="Title" required>
+        <input class="form-input" type="text" name="description" [(ngModel)]="newTask.description" placeholder="Description" required>
+        <input class="form-input" type="text" name="functionality" [(ngModel)]="newTask.functionality" placeholder="Functionality" required>
+        <button class="form-submit-btn" type="submit">Add</button>
+      </form>
+    </div>
+  </div>
+</div>

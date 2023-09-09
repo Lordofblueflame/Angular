@@ -1,0 +1,91 @@
+.kanban-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.kanban-table {
+  display: flex;
+  height: 80vh;
+  width: 100%;
+  flex-direction: column;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.kanban-column {
+  flex-grow: 1;
+  padding: 20px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.kanban-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e1e1e1;
+  padding-bottom: 10px;
+}
+
+.kanban-list, .kanban-sublist {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.kanban-item, .kanban-subitem {
+  padding: 10px;
+  border: 1px solid #e1e1e1;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background-color: #f7f7f7;
+  transition: background-color 0.2s;
+}
+
+.kanban-item:hover, .kanban-subitem:hover {
+  background-color: #f0f0f0;
+}
+
+.kanban-add-btn, .form-submit-btn {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007BFF; 
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.kanban-add-btn:hover, .form-submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.form-popup {
+  margin-top: 20px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.form-popup-title {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #e1e1e1;
+  border-radius: 6px;
+}

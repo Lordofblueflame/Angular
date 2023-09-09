@@ -1,0 +1,24 @@
+<div class="functionalities-container">
+  <h2 class="functionalities-title">Functionalities in Project</h2>
+  <ul class="functionalities-list">
+    <li class="functionalities-item" *ngFor="let t of uniqueFunctionalities()">
+      <span *ngIf="editingFunctionality !== t" (mouseover)="setSelectedFunctionality(t)">{{ t }}</span>
+      <input *ngIf="editingFunctionality === t" [(ngModel)]="editedFunctionalityValue">
+      <div class="tasks-tooltip" *ngIf="selectedFunctionality === t">
+          <h4>Tasks:</h4>
+          <ul>
+              <li *ngFor="let task of tasksForFunctionality(t)">
+                  {{ task.title }}
+              </li>
+          </ul>
+      </div>
+      <button *ngIf="editingFunctionality !== t" (click)="startEditFunctionality(t)">Edit</button>
+      <button *ngIf="editingFunctionality === t" (click)="finishEditFunctionality()">Save</button>
+      <button (click)="deleteFunctionality(t)">Delete</button>
+    </li>
+  </ul>
+  <div>
+    <input [(ngModel)]="newFunctionality" placeholder="New Functionality">
+    <button (click)="addFunctionality()">Add</button>
+  </div>
+</div>

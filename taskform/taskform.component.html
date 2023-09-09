@@ -1,0 +1,20 @@
+<ng-template #taskDialog ngIf="data">
+  <h2 mat-dialog-title>Edit Task</h2>
+  <mat-dialog-content>
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+      <mat-form-field>
+        <input matInput placeholder="Title" [(ngModel)]="data.title" name="title" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Description" [(ngModel)]="data.description" name="description" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Functionality" [(ngModel)]="data.functionality" name="functionality" required>
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button color="primary" (click)="onSubmit()" [disabled]="!form.valid">Accept Changes</button>
+    <button mat-button color="primary" (click)="onClose()">Cancel</button>
+  </mat-dialog-actions>
+</ng-template>
